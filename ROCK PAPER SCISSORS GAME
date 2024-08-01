@@ -1,0 +1,38 @@
+import java.util.Random;
+import java.util.Scanner;
+public class RockPaperScissor
+{
+    public static void main(String[] args)
+    {
+        String[] choices = {"rock", "paper", "scissors"};
+        Random random = new Random();
+        Scanner scanner = new Scanner(System.in);
+        while (true)
+        {
+            int randomNum = random.nextInt(3);
+            System.out.println("Enter your choice (0 for rock, 1 for paper, 2 for scissors): ");
+            int userChoice = scanner.nextInt();
+            System.out.println("Computer's choice: " + choices[randomNum]);
+            System.out.println("Your choice: " + choices[userChoice]);
+            if (randomNum == userChoice)
+            {
+                System.out.println("It's a tie!");
+            }
+            else if ((randomNum == 0 && userChoice == 2) || (randomNum == 1 && userChoice == 0) || (randomNum == 2 && userChoice == 1))
+            {
+                System.out.println("Computer wins!");
+            }
+            else
+            {
+                System.out.println("You win!");
+            }
+            System.out.println("Play again? (yes/no): ");
+            String playAgain = scanner.next();
+            if (!playAgain.equalsIgnoreCase("yes"))
+            {
+                break;
+            }
+        }
+        scanner.close();
+    }
+}
