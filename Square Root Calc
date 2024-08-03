@@ -1,0 +1,19 @@
+package SqrtPosInt;
+import java.util.Scanner;
+public class SquareRootCalculator
+{
+	public static void main(String[] args)
+	{
+		Scanner scanner = new Scanner(System.in);
+		double number;      
+		do
+		{
+			System.out.print("Enter a non-negative number: ");
+		    number = scanner.nextDouble();
+		}
+		while (number < 0);       
+		        double squareRoot = Math.sqrt(number);
+		        System.out.println("Square root of " + number + " is: " + squareRoot);   
+		        scanner.close();
+	 }
+}
